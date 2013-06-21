@@ -9,9 +9,4 @@ Based on the [unofficial SBB API](http://transport.opendata.ch)
 
 If no cities are specified, the default journey will be displayed
 
-## TODO
-
-* Deal with encoding
-* Change default journey (without touching the code)
-
 

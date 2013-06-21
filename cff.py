@@ -17,7 +17,10 @@ def main():
 
 
 	if len(args) == 1:
-		args = ['EPFL', 'Vigie']
+		f = open('config.txt', 'r')
+		tmp = f.readline()[:-1]
+		args = [x.strip() for x in tmp.split('_')]
+		print args
 	else:
 		args = args[1:]
 
@@ -51,7 +54,7 @@ def main():
 		item = "<item>"+title+subtitle+icon+"</item>"
 		results += item
 
-	change_default_item = "<item><title>Set as default travel</title><subtitle>This feature is not working yet</subtitle><icon></icon></item>"	
+	change_default_item = "<item arg='%s _ %s'><title>Set as default travel</title><icon></icon></item>" % (args[0], args[1])
 
 	results+=change_default_item+"</items>"
 
